@@ -1,0 +1,34 @@
+---
+interface Columna {
+  label: string;
+  key: string;
+}
+
+const props = Astro.props as {
+  columnas: Columna[];
+  datos: any[];
+};
+
+const { columnas, datos } = props;
+---
+
+<article class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        {columnas.map((col) => <th>{col.label}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {
+        datos.map((fila) => (
+          <tr>
+            {columnas.map((col) => (
+              <td>{fila[col.key]}</td>
+            ))}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</article>

@@ -1,0 +1,71 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import LandingFooter from "@/components/LandingFooter.astro";
+import LandingLayout from "@/layouts/LandingLayout.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Error 404 | Arimana Bazar" />
+  </head>
+  <body>
+    <LandingLayout>
+      <div class="e404-section container">
+        <img class="e404-img" src="/images/404.png" alt="Imagen de error 404" />
+        <h1 class="e404-title">Página no encontrada</h1>
+        <p class="e404-text">
+          Opss... parece que esta página no existe, por favor intente regresar a
+          la página principal.
+        </p>
+        <a class="e404-link" href="/">
+          <i class="fa-solid fa-home"></i>
+          Regresar
+        </a>
+      </div>
+      <LandingFooter />
+    </LandingLayout>
+  </body>
+</html>
+
+<style is:inline>
+  .e404-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #223636;
+  }
+
+  .e404-img {
+    width: 350px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .e404-title {
+    font-size: 32px;
+  }
+
+  .e404-text {
+    color: #8d9696;
+  }
+
+  .e404-link {
+    margin-top: 20px;
+    color: #223636;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: white;
+    transition: all 100ms ease-in;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .e404-link:hover {
+    background-color: #223636;
+    color: white;
+  }
+</style>

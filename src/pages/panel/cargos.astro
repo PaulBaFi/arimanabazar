@@ -3,10 +3,43 @@ import PanelLayout from "@/layouts/PanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
 import Navbar from "@/components/Navbar.astro";
 import { recursosHumanosSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
+import PanelHeader from "@/components/PanelHeader.astro";
+import PanelTable from "@/components/PanelTable.astro";
+
+import { CARGOS } from "@/data/Cargos";
+const columnasCargos = [{ label: "COD", key: "cod" }];
 ---
 
 <PanelLayout>
-  <Sidebar slot="sidebar" activeSection="usuarios" />
-  <Navbar slot="navbar" title="Empleados" sections={recursosHumanosSections} />
-  <div>Cargos</div>
+  <Sidebar slot="sidebar" activeSection="empleados" />
+  <Navbar
+    slot="navbar"
+    title="Recursos humanos"
+    sections={recursosHumanosSections}
+  />
+  <PanelMain slot="main">
+    <PanelHeader
+      title="Cargos"
+      descripcion="Gestiona puestos de trabajo disponibles en la oganización."
+    />
+
+    <section class="panel-body">
+      <article class="controles">
+        <label class="controles-label" for="buscarCargos">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" name="buscarCargos" id="" />
+        </label>
+
+        <div class="buttons-content">
+          <button class="controles-btn primary" id="anadirCargos">
+            <i class="fa-solid fa-plus"></i>
+            Añadir cargo
+          </button>
+        </div>
+      </article>
+
+      <PanelTable columnas={columnasCargos} datos={CARGOS} />
+    </section>
+  </PanelMain>
 </PanelLayout>

@@ -14,41 +14,27 @@ import Logout from "@/icons/Logout.astro";
     title="Configuraciones"
     sections={configuracionesSections}
   />
-  <section class="panel-header">
-    <article class="header-text">
-      <h1>Perfil de usuario</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
+  <div class="grid-main">
+    <section class="panel-header">
+      <article class="header-text">
+        <h1>Perfil de usuario</h1>
+        <p>
+          Administra la personal del sistema y los datos del usuario actual.
+        </p>
+      </article>
 
-    <button id="cerrarSesion">
-      <Logout />
-      Cerrar sesión
-    </button>
-    <LogoutAccess client:load />
-  </section>
+      <button id="cerrarSesion">
+        <Logout />
+        Cerrar sesión
+      </button>
+      <LogoutAccess client:load />
+    </section>
+
+    <div class="panel-body"></div>
+  </div>
 </PanelLayout>
 
 <style is:inline>
-  .panel-header {
-    background-color: #f3f6f6;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 20px;
-    line-height: 0;
-  }
-
-  .panel-header h1 {
-    font-size: 28px;
-    margin-bottom: 25px;
-  }
-
-  .panel-header p {
-    font-size: 14px;
-    color: #8d8d8d;
-  }
-
   #cerrarSesion {
     display: flex;
     align-items: center;

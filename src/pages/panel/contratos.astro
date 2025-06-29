@@ -3,10 +3,43 @@ import PanelLayout from "@/layouts/PanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
 import Navbar from "@/components/Navbar.astro";
 import { recursosHumanosSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
+import PanelHeader from "@/components/PanelHeader.astro";
+import PanelTable from "@/components/PanelTable.astro";
+
+import { CONTRATOS } from "@/data/Contratos";
+const columnasContratos = [{ label: "COD", key: "cod" }];
 ---
 
 <PanelLayout>
-  <Sidebar slot="sidebar" activeSection="usuarios" />
-  <Navbar slot="navbar" title="Empleados" sections={recursosHumanosSections} />
-  <div>Contratos</div>
+  <Sidebar slot="sidebar" activeSection="empleados" />
+  <Navbar
+    slot="navbar"
+    title="Recursos humanos"
+    sections={recursosHumanosSections}
+  />
+  <PanelMain slot="main">
+    <PanelHeader
+      title="Contratos"
+      descripcion="Gestiona los contratos con los trabajadores de la organización."
+    />
+
+    <section class="panel-body">
+      <article class="controles">
+        <label class="controles-label" for="buscarContratos">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" name="buscarContratos" id="" />
+        </label>
+
+        <div class="buttons-content">
+          <button class="controles-btn primary" id="anadirContratos">
+            <i class="fa-solid fa-plus"></i>
+            Añadir contrato
+          </button>
+        </div>
+      </article>
+
+      <PanelTable columnas={columnasContratos} datos={CONTRATOS} />
+    </section>
+  </PanelMain>
 </PanelLayout>

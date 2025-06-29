@@ -3,14 +3,44 @@ import PanelLayout from "@/layouts/PanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
 import Navbar from "@/components/Navbar.astro";
 import { relacionesComercialesSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
+import PanelHeader from "@/components/PanelHeader.astro";
+import PanelTable from "@/components/PanelTable.astro";
+
+import { EMPRESAS } from "@/data/Empresas";
+const columnasEmpresas = [{ label: "COD", key: "cod" }];
 ---
 
 <PanelLayout>
   <Sidebar slot="sidebar" activeSection="relaciones" />
   <Navbar
     slot="navbar"
-    title="Recursos humanos"
+    title="Relaciones comerciales"
     sections={relacionesComercialesSections}
   />
-  <div>Empresas</div>
+
+  <PanelMain slot="main">
+    <PanelHeader
+      title="Persona"
+      descripcion="Gestiona los datos de los individuos vinculados con el negocio."
+    />
+
+    <section class="panel-body">
+      <article class="controles">
+        <label class="controles-label" for="buscarPersona">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" name="buscarPersona" id="" />
+        </label>
+
+        <div class="buttons-content">
+          <button class="controles-btn primary" id="anadirPersona">
+            <i class="fa-solid fa-plus"></i>
+            Añadir persona
+          </button>
+        </div>
+      </article>
+
+      <PanelTable columnas={columnasEmpresas} datos={EMPRESAS} />
+    </section>
+  </PanelMain>
 </PanelLayout>
