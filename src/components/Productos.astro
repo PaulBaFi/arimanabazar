@@ -1,3 +1,21 @@
+---
+import { PRODUCTOS } from "@/lib/productos";
+---
+
 <section id="productos" class="productos-section">
-  <div class="container">Productos</div>
+  <div class="landing-producto container">
+    {
+      PRODUCTOS.map((prod) => {
+        return (
+          <div class="producto-card" id={`producto-${prod.id}`}>
+            <img src={`/images/photos/${prod.href}.png`} alt="" />
+            <div class="card-content">
+              <b>{prod.nombre}</b>
+              <p>{prod.descripcion}</p>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
 </section>
