@@ -1,0 +1,12 @@
+---
+import PanelLayout from "@/layouts/PanelLayout.astro";
+import Sidebar from "@/components/Sidebar.astro";
+import Navbar from "@/components/Navbar.astro";
+import { gestionVentasSections } from "@/data/NavbarSections";
+---
+
+<PanelLayout>
+  <Sidebar slot="sidebar" activeSection="ventas" />
+  <Navbar slot="navbar" title="Ventas" sections={gestionVentasSections} />
+  <div>Clientes</div>
+</PanelLayout>

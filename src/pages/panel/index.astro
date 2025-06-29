@@ -1,0 +1,16 @@
+---
+import SimplePanelLayout from "@/layouts/SimplePanelLayout.astro";
+import Sidebar from "@/components/Sidebar.astro";
+const isLoggedIn = Astro.cookies.get("isLoggedIn") || null;
+---
+
+<SimplePanelLayout>
+  <Sidebar slot="sidebar" activeSection="principal" />
+  <div>Bienvenido al panel principal ✨</div>
+
+  <script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      window.location.href = "/";
+    }
+  </script>
+</SimplePanelLayout>

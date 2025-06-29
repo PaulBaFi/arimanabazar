@@ -1,0 +1,18 @@
+---
+import { CATEGORIAS } from "@/lib/categorias";
+---
+
+<section class="categorias-section" id="categorias">
+  <div class="container categorias-cards">
+    {
+      CATEGORIAS.map((cat) => {
+        return (
+          <div class="categorias-card" id={cat.id}>
+            <img src={`/src/images/photos/categorias${cat.img}.png`} alt="" />
+            <b>{cat.title}</b>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>

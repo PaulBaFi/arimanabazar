@@ -1,0 +1,17 @@
+---
+import "@/css/panel.css";
+import BaseHead from "@/components/BaseHead.astro";
+---
+
+<html lang="es">
+  <head>
+    <BaseHead title="Panel | Arimana Bazar" />
+  </head>
+  <body class="withNavbar">
+    <slot name="sidebar" />
+    <slot name="navbar" />
+    <main class="main">
+      <slot />
+    </main>
+  </body>
+</html>

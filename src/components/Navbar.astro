@@ -1,0 +1,19 @@
+---
+const { title, sections } = Astro.props;
+---
+
+<nav class="navbar">
+  <h3>{title}</h3>
+  <div class="separador-h"></div>
+  <ul class="navbar-list">
+    {
+      sections.map((section: any) => (
+        <li id={section.id}>
+          <a class="list-link" href={section.href}>
+            {section.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

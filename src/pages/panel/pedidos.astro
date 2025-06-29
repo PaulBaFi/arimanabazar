@@ -1,0 +1,12 @@
+---
+import PanelLayout from "@/layouts/PanelLayout.astro";
+import Sidebar from "@/components/Sidebar.astro";
+import Navbar from "@/components/Navbar.astro";
+import { gestionPedidosSections } from "@/data/NavbarSections";
+---
+
+<PanelLayout>
+  <Sidebar slot="sidebar" activeSection="pedidos" />
+  <Navbar slot="navbar" title="Pedidos" sections={gestionPedidosSections} />
+  <div>Pedidos</div>
+</PanelLayout>

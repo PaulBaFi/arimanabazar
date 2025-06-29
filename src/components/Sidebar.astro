@@ -1,0 +1,95 @@
+---
+import Avatar from "@/images/icons/Avatar.astro";
+import Carpeta from "@/images/icons/Carpeta.astro";
+import Configuracion from "@/images/icons/Configuracion.astro";
+import Empleados from "@/images/icons/Empleados.astro";
+import Inventarios from "@/images/icons/Inventarios.astro";
+import Panel from "@/images/icons/Panel.astro";
+import Pedidos from "@/images/icons/Pedidos.astro";
+import Principal from "@/images/icons/Principal.astro";
+import Relaciones from "@/images/icons/Relaciones.astro";
+import Reporte from "@/images/icons/Reporte.astro";
+import Ventas from "@/images/icons/Ventas.astro";
+
+const { activeSection } = Astro.props;
+---
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <img src="/src/images/imgs/logo.svg" alt="logo" />
+    <div class="separador-h"></div>
+
+    <a
+      class=`sidebar-link ${activeSection === 'principal' ? 'active' : ''}`
+      href="/panel"
+    >
+      <Principal />
+    </a>
+    <a
+      class=`sidebar-link ${activeSection === 'panel' ? 'active' : ''}`
+      href="/panel/panel"
+    >
+      <Panel />
+    </a>
+    <div class="separador-h"></div>
+
+    <a
+      class=`sidebar-link ${activeSection === 'relaciones' ? 'active' : ''}`
+      href="/panel/personas"
+    >
+      <Relaciones />
+    </a>
+    <a
+      class=`sidebar-link ${activeSection === 'empleados' ? 'active' : ''}`
+      href="/panel/empleados"
+    >
+      <Empleados />
+    </a>
+    <a
+      class=`sidebar-link ${activeSection === 'usuarios' ? 'active' : ''}`
+      href="/panel/usuarios"
+    >
+      <Carpeta />
+    </a>
+    <a
+      class=`sidebar-link ${activeSection === 'pedidos' ? 'active' : ''}`
+      href="/panel/pedidos"
+    >
+      <Pedidos />
+    </a>
+    <a
+      class=`sidebar-link ${activeSection === 'productos' ? 'active' : ''}`
+      href="/panel/productos"
+    >
+      <Inventarios />
+    </a>
+    <a
+      class=`sidebar-link ${activeSection === 'ventas' ? 'active' : ''}`
+      href="/panel/ventas"
+    >
+      <Ventas />
+    </a>
+    <a
+      class=`sidebar-link ${activeSection === 'reportes' ? 'active' : ''}`
+      href="/panel/reportes-ventas"
+    >
+      <Reporte />
+    </a>
+  </div>
+
+  <div class="sidebar-footer">
+    <a
+      class=`sidebar-link ${activeSection === 'nosotros' ? 'active' : ''}`
+      href="/panel/nosotros"
+    >
+      <Configuracion />
+    </a>
+    <div class="separador-h"></div>
+    <a
+      class=`sidebar-link ${activeSection === 'perfil' ? 'active' : ''}`
+      href="/panel/perfil"
+    >
+      <Avatar />
+    </a>
+  </div>
+</aside>

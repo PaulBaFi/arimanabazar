@@ -1,0 +1,16 @@
+---
+import PanelLayout from "@/layouts/PanelLayout.astro";
+import Sidebar from "@/components/Sidebar.astro";
+import Navbar from "@/components/Navbar.astro";
+import { configuracionesSections } from "@/data/NavbarSections";
+---
+
+<PanelLayout>
+  <Sidebar slot="sidebar" activeSection="nosotros" />
+  <Navbar
+    slot="navbar"
+    title="Configuraciones"
+    sections={configuracionesSections}
+  />
+  <div>Configuraciones</div>
+</PanelLayout>

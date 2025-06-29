@@ -1,0 +1,12 @@
+---
+import PanelLayout from "@/layouts/PanelLayout.astro";
+import Sidebar from "@/components/Sidebar.astro";
+import Navbar from "@/components/Navbar.astro";
+import { recursosHumanosSections } from "@/data/NavbarSections";
+---
+
+<PanelLayout>
+  <Sidebar slot="sidebar" activeSection="usuarios" />
+  <Navbar slot="navbar" title="Empleados" sections={recursosHumanosSections} />
+  <div>Cargos</div>
+</PanelLayout>

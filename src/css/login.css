@@ -1,0 +1,136 @@
+body {
+    min-height: 100dvh;
+    background-image: url('/src/images/imgs/login-bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 300ms ease-in;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 32px;
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+}
+
+.logo-flotante {
+    position: absolute;
+    bottom: 90%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: 0;
+    transform: translateX(-50%) rotateZ(5deg);
+}
+
+.login-container h1 {
+    padding-top: 40px;
+    font-size: 32px;
+    text-align: center;
+    color: #0FC2BF;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.form-grupo input {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    transition: all 300ms ease-in-out;
+}
+
+.form-grupo input:focus {
+    border-color: #0dadab;
+}
+
+.form-grupo input:focus+label {
+    color: #0dadab;
+}
+
+.form-grupo label {
+    transition: all 200ms ease-in-out;
+    color: #888888;
+}
+
+.form button {
+    margin-top: 48px;
+    padding: 8px 12px;
+    color: white;
+    letter-spacing: 0.7px;
+    font-weight: 500;
+    border: none;
+    background-color: #17ddda;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.form button:hover {
+    background-color: #0dadab;
+}
+
+#alerta {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 12px;
+    border: 1px solid transparent;
+    color: #534211;
+}
+
+#alerta.active {
+    padding: 10px;
+    background-color: #f8eac5;
+    border-color: #b99227;
+}
+
+.volver-link {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    color: #ccc;
+    padding: 4px;
+    transition: all 200ms ease-in;
+}
+
+.volver-link:hover {
+    color: #223636;
+}
+
+@media (max-width: 620px) {
+    body {
+        padding: 20px;
+    }
+
+    .login-container {
+        max-width: initial;
+    }
+
+    .form {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,35 @@
+---
+import LoginLayout from "@/layouts/LoginLayout.astro";
+import LoginAccess from "@/components/LoginAccess";
+import "@/css/login.css";
+---
+
+<LoginLayout>
+  <div class="login-container">
+    <img
+      class="logo-flotante"
+      src="/src/images/imgs/logo.svg"
+      alt="Logo Arimana Bazar"
+    />
+
+    <h1>Iniciar sesión</h1>
+
+    <form id="loginForm" class="form" method="post" novalidate>
+      <div class="form-grupo">
+        <input type="email" name="correo" />
+        <label for="correo">Correo</label>
+      </div>
+      <div class="form-grupo">
+        <input type="password" name="clave" />
+        <label for="clave">Contraseña</label>
+      </div>
+      <button id="iniciarSesion" type="button">Ingresar</button>
+    </form>
+
+    <a class="volver-link" href="/">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+  </div>
+
+  <LoginAccess client:load />
+</LoginLayout>
