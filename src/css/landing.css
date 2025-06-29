@@ -94,7 +94,7 @@
     border-radius: 20px;
     height: 700px;
     padding: 20px;
-    background-image: url("/src/images/imgs/alternative-bg.svg");
+    background-image: url("/images/alternative-bg.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -277,7 +277,7 @@
     margin: 10px;
     border-radius: 20px;
     padding: 20px;
-    background-image: url('/src/images/imgs/footer-bg.svg');
+    background-image: url('/images/footer-bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     color: rgb(20, 29, 29);
