@@ -8,7 +8,14 @@ import PanelHeader from "@/components/PanelHeader.astro";
 import PanelTable from "@/components/PanelTable.astro";
 
 import { EMPLEADOS } from "@/data/Empleados";
-const columnasEmpleados = [{ label: "COD", key: "cod" }];
+const columnasEmpleados = [
+  { label: "COD", key: "idEmpleado" },
+  { label: "Nombres", key: "nombreCompleto" },
+  { label: "Cargo", key: "nombreCargo" },
+  { label: "Contrato", key: "nombreContrato" },
+  { label: "Salario", key: "salario" },
+  { label: "Turno", key: "turnoDescripcion" },
+];
 ---
 
 <PanelLayout>

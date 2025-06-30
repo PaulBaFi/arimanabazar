@@ -112,14 +112,20 @@ body.withoutNavbar {
     border-collapse: collapse;
     min-width: 800px;
     width: 100%;
-    height: 100%;
 }
 
 .table-container table th,
 .table-container table td {
-    padding: 20px 8px;
+    padding: 12px;
     text-align: left;
     line-height: 20px;
+    max-width: 300px;
+    min-width: 30px;
+}
+
+.table-container table th:first-child,
+.table-container table td:first-child {
+    text-align: center;
 }
 
 .table-container table tr:nth-child(even) {

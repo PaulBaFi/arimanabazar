@@ -1,0 +1,51 @@
+export const USUARIOS = [
+  {
+    cod: 1,
+    empleado: "JUAN PEREZ GOMEZ",
+    correo: "GERENTE.PRINCIPAL@EMPRESA.COM",
+    tipoUsuario: "ADMINISTRADOR",
+    cantidad: 1,
+  },
+  {
+    cod: 2,
+    empleado: "MARIA LOPEZ SANCHEZ",
+    correo: "VENDEDOR.VENTAS@EMPRESA.COM",
+    tipoUsuario: "USUARIO CON ACCESO",
+    cantidad: 1,
+  },
+  {
+    cod: 3,
+    empleado: "CARLOS MARTINEZ LOZA",
+    correo: "ADMIN.SISTEMA@EMPRESA.COM",
+    tipoUsuario: "ADMINISTRADOR",
+    cantidad: 1,
+  },
+  {
+    cod: 4,
+    empleado: "FERNANDO TORRES MENDOZA",
+    correo: "ENCARGADO.MARKE@EMPRESA.COM",
+    tipoUsuario: "USUARIO SIN ACCESO",
+    cantidad: 1,
+  },
+  {
+    cod: 5,
+    empleado: "ANA FERNANDEZ MORALES",
+    correo: "ENCARGADO.ALMACEN@EMPRESA.COM",
+    tipoUsuario: "USUARIO SIN ACCESO",
+    cantidad: 1,
+  },
+  {
+    cod: 6,
+    empleado: "LUIS RODRIGUEZ LOPEZ",
+    correo: "VENTAS.ASESOR1@EMPRESA.COM",
+    tipoUsuario: "USUARIO SIN ACCESO",
+    cantidad: 1,
+  },
+  {
+    cod: 7,
+    empleado: "PATRICIA GARCIA DIAZ",
+    correo: "VENTAS.ASESOR1@EMPRESA.COM",
+    tipoUsuario: "USUARIO SIN ACCESO",
+    cantidad: 1,
+  },
+];

@@ -3,10 +3,63 @@ import PanelLayout from "@/layouts/PanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
 import Navbar from "@/components/Navbar.astro";
 import { gestionPedidosSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
+import PanelHeader from "@/components/PanelHeader.astro";
+import PanelTable from "@/components/PanelTable.astro";
+
+import { PROVEEDORES } from "@/data/Proveedores";
+const columnasProveedor = [
+  { label: "COD", key: "cod" },
+  { label: "Razón social", key: "razonSocial" },
+  { label: "RUC", key: "ruc" },
+  { label: "Dirección", key: "direccion" },
+  { label: "Teléfono", key: "telefono" },
+  { label: "Contacto", key: "contacto" },
+  { label: "Correo", key: "correo" },
+  { label: "Descripción", key: "descripcion" },
+];
 ---
 
 <PanelLayout>
   <Sidebar slot="sidebar" activeSection="pedidos" />
-  <Navbar slot="navbar" title="Pedidos" sections={gestionPedidosSections} />
-  <div>Proveedores</div>
+  <Navbar
+    slot="navbar"
+    title="Gestión de pedidos"
+    sections={gestionPedidosSections}
+  />
+  <PanelMain slot="main">
+    <PanelHeader
+      title="Proveedores"
+      descripcion="Registra y administra las relaciones con proveedores"
+    />
+
+    <section class="panel-body">
+      <article class="controles">
+        <label class="controles-label" for="buscarProveedor">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            name="buscarProveedor"
+            id=""
+            placeholder="Buscar por RUC"
+          />
+        </label>
+
+        <div class="buttons-content">
+          <button class="controles-btn primary" id="anadirProveedor">
+            <i class="fa-solid fa-plus"></i>
+            Añadir proveedor
+          </button>
+        </div>
+      </article>
+
+      <PanelTable columnas={columnasProveedor} datos={PROVEEDORES} />
+    </section>
+  </PanelMain>
 </PanelLayout>
+
+<style is:inline>
+  table tbody td:last-child {
+    width: 500px;
+  }
+</style>

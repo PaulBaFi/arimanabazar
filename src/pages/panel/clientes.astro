@@ -3,10 +3,50 @@ import PanelLayout from "@/layouts/PanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
 import Navbar from "@/components/Navbar.astro";
 import { gestionVentasSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
+import PanelHeader from "@/components/PanelHeader.astro";
+import PanelTable from "@/components/PanelTable.astro";
+import { CLIENTES } from "@/data/Cliente";
+const columnasClientes = [
+  { label: "COD", key: "cod" },
+  { label: "Identificador", key: "identificador" },
+  { label: "Cliente", key: "cliente" },
+  { label: "Dirección", key: "direccion" },
+  { label: "Teléfono", key: "telefono" },
+  { label: "Distrito", key: "distrito" },
+];
 ---
 
 <PanelLayout>
   <Sidebar slot="sidebar" activeSection="ventas" />
   <Navbar slot="navbar" title="Ventas" sections={gestionVentasSections} />
-  <div>Clientes</div>
+  <PanelMain slot="main">
+    <PanelHeader
+      title="Clientes"
+      descripcion="Administra la información de las personas o empresas que realizan compras."
+    />
+
+    <section class="panel-body">
+      <article class="controles">
+        <label class="controles-label" for="buscarClientes">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            name="buscarClientes"
+            id=""
+            placeholder="Buscar por DNI o RUC"
+          />
+        </label>
+
+        <div class="buttons-content">
+          <button class="controles-btn primary" id="anadirClientes">
+            <i class="fa-solid fa-plus"></i>
+            Añadir cliente
+          </button>
+        </div>
+      </article>
+
+      <PanelTable columnas={columnasClientes} datos={CLIENTES} />
+    </section>
+  </PanelMain>
 </PanelLayout>
