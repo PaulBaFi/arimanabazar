@@ -1,43 +1,43 @@
 export const CARGOS = [
   {
     idCargo: 1,
-    nombreCargo: "GERENTE",
+    nombreCargo: "Gerente",
     descripcion:
-      "RESPONSABLE DE LA GESTIÓN GENERAL DE LA EMPRESA Y LA TOMA DE DECISIONES ESTRATÉGICAS",
+      "Responsable de la gestión general de la empresa y la toma de decisiones estratégicas",
     cantidad: 1,
   },
   {
     idCargo: 2,
-    nombreCargo: "ADMINISTRADOR",
+    nombreCargo: "Administrador",
     descripcion:
-      "ENCARGADO DE COORDINAR LOS RECURSOS Y SUPERVISAR LAS OPERACIONES ADMINISTRATIVAS DIARIAS",
+      "Encargado de coordinar los recursos y supervisar las operaciones administrativas diarias",
     cantidad: 1,
   },
   {
     idCargo: 3,
-    nombreCargo: "ASESOR DE VENTAS",
+    nombreCargo: "Asesor de ventas",
     descripcion:
-      "ATIENDE A LOS CLIENTES, PROMUEVE PRODUCTOS Y CIERRA VENTAS SEGÚN LOS OBJETIVOS DEL NEGOCIO",
+      "Atiende a los clientes, promueve productos y cierra ventas según los objetivos del negocio",
     cantidad: 2,
   },
   {
     idCargo: 4,
-    nombreCargo: "ENCARGADO DE ALMACÉN",
+    nombreCargo: "Encargado de almacén",
     descripcion:
-      "GESTIONA EL INVENTARIO, CONTROLA EL INGRESO Y SALIDA DE PRODUCTOS Y ORGANIZA EL ALMACÉN",
+      "Gestiona el inventario, controla el ingreso y salida de productos y organiza el almacén",
     cantidad: 1,
   },
   {
     idCargo: 5,
-    nombreCargo: "ENCARGADO DE MARKETING",
+    nombreCargo: "Encargado de marketing",
     descripcion:
-      "PLANIFICA CAMPAÑAS, ANALIZA EL MERCADO Y MEJORA LA VISIBILIDAD DE LA MARCA",
+      "Planifica campañas, analiza el mercado y mejora la visibilidad de la marca",
     cantidad: 1,
   },
   {
     idCargo: 6,
-    nombreCargo: "CAJERO",
-    descripcion: "ENCARGADO DE GESTIONAR LAS TRANSACCIONES DE COMPRA-VENTA",
+    nombreCargo: "Cajero",
+    descripcion: "Encargado de gestionar las transacciones de compra-venta",
     cantidad: 1,
   },
 ];

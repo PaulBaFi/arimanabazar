@@ -112,6 +112,7 @@ body.withoutNavbar {
     border-collapse: collapse;
     min-width: 800px;
     width: 100%;
+    color: #303030;
 }
 
 .table-container table th,
@@ -121,15 +122,13 @@ body.withoutNavbar {
     line-height: 20px;
     max-width: 300px;
     min-width: 30px;
+    border-bottom: 1px solid #E3E5E5;
+    font-size: 14px;
 }
 
 .table-container table th:first-child,
 .table-container table td:first-child {
     text-align: center;
-}
-
-.table-container table tr:nth-child(even) {
-    background-color: #f3f6f6;
 }
 
 .table-container table thead {
@@ -138,8 +137,10 @@ body.withoutNavbar {
 }
 
 .table-container table th {
-    background-color: #0FC2BF;
-    color: white;
+    color: #223636;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #eaecec;
 }
 
 .grid-main {

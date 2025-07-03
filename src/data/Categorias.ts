@@ -1,77 +1,77 @@
 export const CATEGORIAS = [
   {
     cod: 1,
-    nombre: "ARTÍCULOS DE COCINA",
+    nombre: "Artículos de cocina",
     cantidad: 41,
   },
   {
     cod: 2,
-    nombre: "JUGUETERÍA BÁSICA",
+    nombre: "Juguetería básica",
     cantidad: 36,
   },
   {
     cod: 3,
-    nombre: "PERFUMERÍA",
+    nombre: "Perfumería",
     cantidad: 36,
   },
   {
     cod: 4,
-    nombre: "ACCESORIOS PARA EL HOGAR",
+    nombre: "Accesorios para el hogar",
     cantidad: 36,
   },
   {
     cod: 5,
-    nombre: "BELLEZA Y CUIDADO PERSONAL",
+    nombre: "Belleza y cuidado personal",
     cantidad: 36,
   },
   {
     cod: 6,
-    nombre: "BOLSAS DE REGALO",
+    nombre: "Bolsas de regalo",
     cantidad: 36,
   },
   {
     cod: 7,
-    nombre: "ARTÍCULOS DEPORTIVOS",
+    nombre: "Artículos deportivos",
     cantidad: 36,
   },
   {
     cod: 8,
-    nombre: "PELUCHES",
+    nombre: "Peluches",
     cantidad: 36,
   },
   {
     cod: 9,
-    nombre: "ALCANCÍAS",
+    nombre: "Alcancías",
     cantidad: 36,
   },
   {
     cod: 10,
-    nombre: "MOCHILAS",
+    nombre: "Mochilas",
     cantidad: 36,
   },
   {
     cod: 11,
-    nombre: "MALETINES",
+    nombre: "Maletines",
     cantidad: 36,
   },
   {
     cod: 12,
-    nombre: "CARTERAS",
+    nombre: "Carteras",
     cantidad: 36,
   },
   {
     cod: 13,
-    nombre: "BILLETERAS",
+    nombre: "Billeteras",
     cantidad: 36,
   },
   {
     cod: 14,
-    nombre: "DULCES Y CHOCOLATES",
+    nombre: "Dulces y chocolates",
     cantidad: 36,
   },
   {
     cod: 15,
-    nombre: "ACCESORIOS DE MODA",
+    nombre: "Accesorios de moda",
     cantidad: 36,
   },
 ];

@@ -1,17 +1,17 @@
 export const CONTRATOS = [
   {
     idContrato: 1,
-    nombre: "TIEMPO COMPLETO",
+    nombre: "Tiempo completo",
     cantidad: 4,
   },
   {
     idContrato: 2,
-    nombre: "MEDIO TIEMPO",
+    nombre: "Medio tiempo",
     cantidad: 1,
   },
   {
     idContrato: 3,
-    nombre: "TEMPORAL",
+    nombre: "Temporal",
     cantidad: 2,
   },
 ];
