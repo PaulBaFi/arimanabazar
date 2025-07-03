@@ -4,7 +4,7 @@ export const EMPLEADOS = [
     nombreCompleto: "Juan Perez Gomez",
     nombreCargo: "Gerente",
     nombreContrato: "Tiempo completo",
-    salario: 3500.0,
+    salario: "s/. 3,500.00",
     turnoDescripcion: "Mañana",
   },
   {
@@ -12,7 +12,7 @@ export const EMPLEADOS = [
     nombreCompleto: "Maria Lopez Sanchez",
     nombreCargo: "Cajero",
     nombreContrato: "Medio tiempo",
-    salario: 1500.0,
+    salario: "s/. 1,500.00",
     turnoDescripcion: "Tarde",
   },
   {
@@ -20,7 +20,7 @@ export const EMPLEADOS = [
     nombreCompleto: "Carlos Martinez Loza",
     nombreCargo: "Administrador",
     nombreContrato: "Temporal",
-    salario: 1500.0,
+    salario: "s/. 1,500.00",
     turnoDescripcion: "Mañana",
   },
   {
@@ -28,7 +28,7 @@ export const EMPLEADOS = [
     nombreCompleto: "Ana Fernandez Morales",
     nombreCargo: "Encargado de almacén",
     nombreContrato: "Tiempo completo",
-    salario: 1300.0,
+    salario: "s/. 1,300.00",
     turnoDescripcion: "Mañana",
   },
   {
@@ -36,7 +36,7 @@ export const EMPLEADOS = [
     nombreCompleto: "Luis Rodriguez Lopez",
     nombreCargo: "Asesor de ventas",
     nombreContrato: "Temporal",
-    salario: 1200.0,
+    salario: "s/. 1,200.00",
     turnoDescripcion: "Tarde",
   },
   {
@@ -44,7 +44,7 @@ export const EMPLEADOS = [
     nombreCompleto: "Patricia Garcia Diaz",
     nombreCargo: "Asesor de ventas",
     nombreContrato: "Tiempo completo",
-    salario: 1200.0,
+    salario: "s/. 1,200.00",
     turnoDescripcion: "Mañana",
   },
   {
@@ -52,7 +52,7 @@ export const EMPLEADOS = [
     nombreCompleto: "Fernando Torres Mendoza",
     nombreCargo: "Encargado de marketing",
     nombreContrato: "Tiempo completo",
-    salario: 1100.0,
+    salario: "s/. 1,100.00",
     turnoDescripcion: "Tarde",
   },
 ];

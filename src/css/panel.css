@@ -119,11 +119,18 @@ body.withoutNavbar {
 .table-container table td {
     padding: 12px;
     text-align: left;
-    line-height: 20px;
-    max-width: 300px;
     min-width: 30px;
     border-bottom: 1px solid #E3E5E5;
     font-size: 14px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+.table-container table td {
+    padding: 8px;
 }
 
 .table-container table th:first-child,
@@ -141,6 +148,41 @@ body.withoutNavbar {
     text-transform: uppercase;
     letter-spacing: 1px;
     background-color: #eaecec;
+}
+
+.table-container table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.table .actions {
+    display: flex;
+    max-width: 150px;
+    gap: 6px;
+}
+
+.table .btn {
+    padding: 2px 4px;
+    border: none;
+    background-color: #E3E5E5;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+
+.table .btn:hover {
+    filter: contrast(.9);
+}
+
+.table .btn.btn-edit {
+    background-color: #edf5ff;
+    color: #2366b8;
+}
+
+.table .btn.btn-delete {
+    background-color: #ffeeed;
+    color: #b93029;
 }
 
 .grid-main {
@@ -195,15 +237,19 @@ body.withoutNavbar {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
     box-shadow: 0 2px 4px #96969630;
+    max-width: 400px;
+    width: 100%;
 }
 
 .controles-label i {
     padding-left: 12px;
+    color: #8D9696;
 }
 
 .controles-label input {
     padding: 8px 12px;
     border: none;
+    width: 100%;
     background-color: transparent;
     font-size: 16px;
 }
@@ -221,4 +267,39 @@ body.withoutNavbar {
     box-shadow: 0 2px 4px #96969680;
     font-size: 16px;
     cursor: pointer;
+}
+
+/* Estilos específicos para las columnas */
+
+#empleadosSection table tr td:nth-child(5) span,
+#contratosSection table tr td:nth-child(3) span,
+#cargosSection table tr td:nth-child(4) span,
+#productosSection table tr td:nth-child(6) span,
+#categoriasSection table tr td:nth-child(3) span,
+#almacenesSection table tr td:nth-child(3) span {
+    padding: 2px 8px;
+    border-radius: 25px;
+    background-color: #0fc2bf;
+    color: white;
+    font-weight: 600;
+}
+
+#usuariosSection table tr td:nth-child(4) span {
+    padding: 2px 8px;
+    border-radius: 25px;
+    background-color: #eaecec;
+    color: #525252;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+
+#usuariosSection table tr td[data-register="USUARIO CON ACCESO"] span {
+    background: rgb(162, 56, 228);
+    color: white;
+}
+
+#usuariosSection table tr td[data-register="ADMINISTRADOR"] span {
+    background: rgb(56, 179, 228);
+    color: white;
 }

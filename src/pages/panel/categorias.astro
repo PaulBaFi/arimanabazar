@@ -7,7 +7,7 @@ import PanelMain from "@/components/PanelMain.astro";
 import PanelHeader from "@/components/PanelHeader.astro";
 import PanelTable from "@/components/PanelTable.astro";
 
-import { CATEGORIAS } from "@/lib/categorias";
+import { CATEGORIAS } from "@/data/Categorias";
 const columnasCategorías = [
   { label: "COD", key: "cod" },
   { label: "Categoría", key: "nombre" },
@@ -28,7 +28,7 @@ const columnasCategorías = [
       descripcion="Administra la clasificación de productos del inventarios."
     />
 
-    <section class="panel-body">
+    <section class="panel-body" id="categoriasSection">
       <article class="controles">
         <label class="controles-label" for="buscarCategorias">
           <i class="fa-solid fa-magnifying-glass"></i>

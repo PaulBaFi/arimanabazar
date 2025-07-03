@@ -14,8 +14,8 @@ const columnasPersonas = [
   { label: "Nombres", key: "nombreCompleto" },
   { label: "DNI", key: "dni" },
   { label: "Teléfono", key: "telefono" },
-  { label: "Genero", key: "genero" },
-  { label: "Direccion", key: "direccion" },
+  { label: "Género", key: "genero" },
+  { label: "Dirección", key: "direccion" },
   { label: "Correo", key: "correo" },
   { label: "Nacimiento", key: "fechaNac" },
 ];
@@ -39,7 +39,12 @@ const columnasPersonas = [
       <article class="controles">
         <label class="controles-label" for="buscarPersona">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" name="buscarPersona" id="" />
+          <input
+            type="text"
+            name="buscarPersona"
+            id=""
+            placeholder="Buscar por nombres, DNI o teléfono"
+          />
         </label>
 
         <div class="buttons-content">

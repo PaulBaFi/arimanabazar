@@ -17,6 +17,7 @@ const { columnas, datos } = props;
     <thead>
       <tr>
         {columnas.map((col) => <th>{col.label}</th>)}
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -24,8 +25,20 @@ const { columnas, datos } = props;
         datos.map((fila) => (
           <tr>
             {columnas.map((col) => (
-              <td>{fila[col.key]}</td>
+              <td data-register={fila[col.key]}>
+                <span>{fila[col.key]}</span>
+              </td>
             ))}
+            <td>
+              <div class="actions">
+                <button class="btn btn-edit">
+                  <i class="fa-solid fa-edit" />
+                </button>
+                <button class="btn btn-delete">
+                  <i class="fa-solid fa-trash" />
+                </button>
+              </div>
+            </td>
           </tr>
         ))
       }
