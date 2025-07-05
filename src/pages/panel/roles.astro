@@ -3,10 +3,52 @@ import PanelLayout from "@/layouts/PanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
 import Navbar from "@/components/Navbar.astro";
 import { gestionUsuariosSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
+import PanelHeader from "@/components/PanelHeader.astro";
+import PanelTable from "@/components/PanelTable.astro";
+
+import { TIPO_USUARIO } from "@/data/TipoUsuario";
+const columnasRoles = [
+  { label: "COD", key: "id" },
+  { label: "Tipo de usuario", key: "nombre" },
+  { label: "Cantidad", key: "cantidad" },
+];
 ---
 
 <PanelLayout>
   <Sidebar slot="sidebar" activeSection="usuarios" />
-  <Navbar slot="navbar" title="Usuarios" sections={gestionUsuariosSections} />
-  <div>Roles</div>
+  <Navbar
+    slot="navbar"
+    title="Gestión de usuarios"
+    sections={gestionUsuariosSections}
+  />
+  <PanelMain slot="main">
+    <PanelHeader
+      title="Roles"
+      descripcion="Controla los permisos de los tipos de usuario del sistema."
+    />
+
+    <section class="panel-body" id="rolesSection">
+      <article class="controles">
+        <label class="controles-label" for="buscarRol">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            name="buscarRol"
+            id="buscarRol"
+            placeholder="Buscar por tipo de usuario"
+          />
+        </label>
+
+        <div class="buttons-content">
+          <button class="controles-btn primary" id="anadirRoles">
+            <i class="fa-solid fa-plus"></i>
+            Añadir roles
+          </button>
+        </div>
+      </article>
+
+      <PanelTable columnas={columnasRoles} datos={TIPO_USUARIO} />
+    </section>
+  </PanelMain>
 </PanelLayout>

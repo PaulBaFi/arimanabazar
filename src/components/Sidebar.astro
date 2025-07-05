@@ -8,7 +8,6 @@ import Panel from "@/icons/Panel.astro";
 import Pedidos from "@/icons/Pedidos.astro";
 import Principal from "@/icons/Principal.astro";
 import Relaciones from "@/icons/Relaciones.astro";
-import Reporte from "@/icons/Reporte.astro";
 import Ventas from "@/icons/Ventas.astro";
 
 const { activeSection } = Astro.props;
@@ -25,9 +24,15 @@ const { activeSection } = Astro.props;
     >
       <Principal />
     </a>
-    <a
+    <!-- <a
       class=`sidebar-link ${activeSection === 'panel' ? 'active' : ''}`
       href="/panel/panel"
+    >
+      <Panel />
+    </a> -->
+    <a
+      class=`sidebar-link ${activeSection === 'reportes' ? 'active' : ''}`
+      href="/panel/reporte-ventas"
     >
       <Panel />
     </a>
@@ -68,12 +73,6 @@ const { activeSection } = Astro.props;
       href="/panel/ventas"
     >
       <Ventas />
-    </a>
-    <a
-      class=`sidebar-link ${activeSection === 'reportes' ? 'active' : ''}`
-      href="/panel/reportes-ventas"
-    >
-      <Reporte />
     </a>
   </div>
 

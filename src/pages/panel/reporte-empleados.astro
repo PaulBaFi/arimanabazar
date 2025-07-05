@@ -1,0 +1,22 @@
+---
+import PanelLayout from "@/layouts/PanelLayout.astro";
+import Sidebar from "@/components/Sidebar.astro";
+import Navbar from "@/components/Navbar.astro";
+import { reportesSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
+---
+
+<PanelLayout>
+  <Sidebar slot="sidebar" activeSection="reportes" />
+  <Navbar slot="navbar" title="Reportes" sections={reportesSections} />
+  <PanelMain slot="main">
+    <div class="frame-container">
+      <iframe
+        title="REPORTE_EMPLEADOS"
+        width="600"
+        height="373.5"
+        src="https://app.powerbi.com/view?r=eyJrIjoiNGEzZjUxMDUtMjA5NS00ZTk0LTkxYjItNThmODhjMmUxYjg2IiwidCI6IjEzODQxZDVmLTk2OGQtNDYyNC1hN2RhLWQ2OGE2MDA2YTg0YSIsImMiOjR9"
+      ></iframe>
+    </div>
+  </PanelMain>
+</PanelLayout>

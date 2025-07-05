@@ -11,6 +11,21 @@ body.withoutNavbar {
     grid-template-columns: auto 1fr;
 }
 
+dialog[open] {
+    scale: 1;
+    transition: scale .3s ease-in-out;
+
+    @starting-style {
+        scale: 0;
+    }
+}
+
+dialog {
+    transition: scale .3s ease,
+        display .3s ease allow-discrete;
+    scale: 0;
+}
+
 .sidebar {
     margin: 10px;
     height: calc(100% - 20px);
@@ -254,9 +269,10 @@ body.withoutNavbar {
     font-size: 16px;
 }
 
-.controles-btn {
+.controles-btn,
+form .btn {
     padding: 8px 12px;
-    border-radius: 50px;
+    border-radius: 8px;
     color: white;
     border: none;
     background-color: #0fc2bf;
@@ -264,10 +280,81 @@ body.withoutNavbar {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 2px 4px #96969680;
     font-size: 16px;
     cursor: pointer;
 }
+
+.cerrar-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #525252;
+    border: none;
+    background-color: #E3E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.base-form h2 {
+    color: #0fc2bf;
+    background-color: #eaf7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.base-form .form-content {
+    padding: 20px;
+}
+
+.base-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.base-form .form-group input,
+.base-form .form-group select {
+    border: 1px solid #E3E5E5;
+    outline: none;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.base-dialog {
+    border: none;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dialog-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.frame-container {
+    width: 100%;
+    height: 100dvh;
+}
+
+.frame-container iframe {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    aspect-ratio: 2/5;
+    border: none;
+}
+
 
 /* Estilos específicos para las columnas */
 

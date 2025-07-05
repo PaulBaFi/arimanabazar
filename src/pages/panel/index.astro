@@ -1,16 +1,142 @@
 ---
 import SimplePanelLayout from "@/layouts/SimplePanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
-const isLoggedIn = Astro.cookies.get("isLoggedIn") || null;
 ---
 
 <SimplePanelLayout>
   <Sidebar slot="sidebar" activeSection="principal" />
-  <div>Bienvenido al panel principal ✨</div>
+  <main class="main">
+    <section class="header-main"></section>
 
-  <script>
-    if (localStorage.getItem("isLoggedIn") !== "true") {
-      window.location.href = "/";
+    <div class="principal-grid">
+      <div class="grid-block">
+        <h3>Acciones rápidas</h3>
+        <div class="acciones-rapidas">
+          <a href="/panel/productos" class="action-btn">
+            Nuevo producto
+            <i class="fa-solid fa-box"></i>
+          </a>
+          <a href="/panel/pedidos" class="action-btn">
+            Registrar pedido
+            <i class="fa-solid fa-truck-fast"></i>
+          </a>
+          <a href="/panel/ventas" class="action-btn">
+            Registrar venta
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <a href="/panel/personas" class="action-btn">
+            Nuevo colaborador
+            <i class="fa-solid fa-handshake"></i>
+          </a>
+          <a href="/panel/reportes-ventas" class="action-btn">
+            Ver reportes
+            <i class="fa-solid fa-file"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "/";
+      }
+    </script>
+  </main>
+
+  <style is:inline>
+    .main {
+      max-height: calc(100dvh - 20px);
+      color: #223636;
     }
-  </script>
+
+    .header-main {
+      margin-block: 10px;
+      margin-right: 10px;
+      padding: 20px;
+      height: 150px;
+      border-radius: 14px;
+
+      background-image: url("/images/banner-bg.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .header-content {
+      padding: 20px;
+      width: fit-content;
+      border-radius: 12px;
+    }
+
+    .header-content strong {
+      font-size: 30px;
+      color: #223636;
+    }
+
+    .principal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-rows: auto;
+      gap: 20px;
+    }
+
+    .grid-block h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .grid-block .acciones-rapidas {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .grid-block .acciones-rapidas a.action-btn {
+      display: inline-block;
+      color: #223636;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .grid-block .acciones-rapidas a:nth-child(1) {
+      background-color: #d1f2eb;
+    }
+
+    .grid-block .acciones-rapidas a:nth-child(2) {
+      background-color: #fdebd0;
+    }
+
+    .grid-block .acciones-rapidas a:nth-child(3) {
+      background-color: #f9e79f;
+    }
+
+    .grid-block .acciones-rapidas a:nth-child(4) {
+      background-color: #d6eaf8;
+    }
+
+    .grid-block .acciones-rapidas a:nth-child(5) {
+      background-color: #f5c6cb;
+    }
+
+    .grid-block .acciones-rapidas a:hover {
+      filter: contrast(0.9);
+    }
+
+    .grid-block .acciones-rapidas a.action-btn i {
+      position: absolute;
+      font-size: 64px;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%) rotate(-13deg);
+      color: rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </SimplePanelLayout>

@@ -37,14 +37,19 @@ export const configuracionesSections = [
 
 export const reportesSections = [
   {
-    id: "reportes-ventas",
-    label: "Reportes de ventas",
-    href: "/panel/reportes-ventas",
+    id: "reporte-ventas",
+    label: "Reporte de ventas",
+    href: "/panel/reporte-ventas",
   },
   {
-    id: "reportes-pedidos",
-    label: "Reportes de pedidos",
-    href: "/panel/reportes-pedidos",
+    id: "reporte-pedidos",
+    label: "Reporte de pedidos",
+    href: "/panel/reporte-pedidos",
+  },
+  {
+    id: "reporte-empleados",
+    label: "Reporte de empleados",
+    href: "/panel/reporte-empleados",
   },
   { id: "kardex", label: "Kardex", href: "/panel/kardex" },
 ];

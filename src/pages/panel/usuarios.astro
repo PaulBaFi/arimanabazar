@@ -8,6 +8,8 @@ import PanelMain from "@/components/PanelMain.astro";
 import PanelTable from "@/components/PanelTable.astro";
 
 import { USUARIOS } from "@/data/Usuarios";
+import { EMPLEADOS } from "@/data/Empleados";
+import { TIPO_USUARIO } from "@/data/TipoUsuario";
 const columnasUsuario = [
   { label: "COD", key: "cod" },
   { label: "Empleado", key: "empleado" },
@@ -37,7 +39,7 @@ const columnasUsuario = [
           <input
             type="text"
             name="buscarUsuarios"
-            id=""
+            id="buscarUsuarios"
             placeholder="Buscar por empleado o tipo de usuario"
           />
         </label>
@@ -52,5 +54,100 @@ const columnasUsuario = [
 
       <PanelTable columnas={columnasUsuario} datos={USUARIOS} />
     </section>
+
+    <dialog class="base-dialog" id="modalUsuario">
+      <form method="dialog" class="base-form" id="usuariosForm">
+        <h2>Registrar nuevo usuario</h2>
+
+        <div class="form-content">
+          <div class="form-group">
+            <label for="Empleado">Empleado:</label>
+            <select id="Empleado" name="Empleado" required>
+              <option value="">—Seleccione un empelado—</option>
+              {
+                EMPLEADOS.map((empleado) => {
+                  return (
+                    <option value={empleado.nombreCompleto}>
+                      {empleado.nombreCompleto}
+                    </option>
+                  );
+                })
+              }
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tipoUsuario">Tipo de Usuario:</label>
+            <select id="tipoUsuario" name="tipoUsuario" required>
+              <option value="">—Seleccione el tipo de usuario—</option>
+              {
+                TIPO_USUARIO.map((tipousu) => {
+                  return <option value={tipousu.id}>{tipousu.nombre}</option>;
+                })
+              }
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" required />
+          </div>
+
+          <div class="form-group">
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" name="clave" required />
+          </div>
+
+          <div class="dialog-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="cerrar-btn" id="cerrarModal"
+              >Cancelar</button
+            >
+          </div>
+        </div>
+      </form>
+    </dialog>
   </PanelMain>
 </PanelLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btnAbrir = document.getElementById("anadirUsuarios");
+    const modal = document.getElementById("modalUsuario") as HTMLDialogElement;
+    const btnCerrar = document.getElementById("cerrarModal");
+
+    btnAbrir?.addEventListener("click", () => {
+      if (modal.showModal) {
+        modal.showModal();
+      } else {
+        modal.setAttribute("open", "true");
+      }
+    });
+
+    btnCerrar?.addEventListener("click", () => {
+      modal.close();
+    });
+
+    document
+      .getElementById("usuariosForm")!
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const persona = (
+          document.getElementById("persona") as HTMLSelectElement
+        ).value;
+        const tipoUsuario = (
+          document.getElementById("tipoUsuario") as HTMLSelectElement
+        ).value;
+        const correo = (document.getElementById("correo") as HTMLInputElement)
+          .value;
+        const clave = (document.getElementById("clave") as HTMLInputElement)
+          .value;
+
+        console.log({ persona, tipoUsuario, correo, clave });
+
+        modal.close();
+        alert("Usuario registrado con éxito.");
+      });
+  });
+</script>
