@@ -3,10 +3,13 @@ import PanelLayout from "@/layouts/PanelLayout.astro";
 import Sidebar from "@/components/Sidebar.astro";
 import Navbar from "@/components/Navbar.astro";
 import { reportesSections } from "@/data/NavbarSections";
+import PanelMain from "@/components/PanelMain.astro";
 ---
 
 <PanelLayout>
   <Sidebar slot="sidebar" activeSection="reportes" />
   <Navbar slot="navbar" title="Reportes" sections={reportesSections} />
-  <div>Kardex</div>
+  <PanelMain slot="main">
+    <div class="frame-container"></div>
+  </PanelMain>
 </PanelLayout>
